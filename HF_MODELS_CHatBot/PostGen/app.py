@@ -6,7 +6,7 @@ from typing import Any, List, Optional
 import random
 
 # Example services offered by your company
-company_services = [
+company_services = [ # use your services
     "Machine Learning and Deep Learning services",
     "Custom chatbot development for businesses",
     "Innovative Computer Vision solutions",
@@ -21,19 +21,19 @@ company_services = [
 # Flask app setup
 app = Flask(__name__)
 
-groq_client = Groq(api_key="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")
+groq_client = Groq(api_key="Your_Groq_API_Key")
 
 # Custom LLM class for Groq
 class GroqLLM(LLM):
     client: Any
-    model: str = "llama-3.1-70b-versatile"
+    model: str = "llama-3.1-70b-versatile"  # you can try other models too
 
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
         chat_completion = self.client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
             model=self.model,
         )
-        return chat_completion.choices[0].message.content.strip()  # Strip unnecessary whitespace
+        return chat_completion.choices[0].message.content.strip() 
 
     @property
     def _llm_type(self) -> str:
@@ -44,9 +44,9 @@ llm = GroqLLM(client=groq_client)
 
 # Define a prompt template for social media post generation
 social_media_prompt_template = """
-You are a social media content writer for AxthTech, a company specializing in {service}. Your task is to generate a creative, engaging, and professional post for {platform}. The post should inspire clients to learn more about AxthTech's services and emphasize the value of the solutions provided.
+You are a social media content writer for [Your're copany name], a company specializing in {service}. Your task is to generate a creative, engaging, and professional post for {platform}. The post should inspire clients to learn more about [Company]'s services and emphasize the value of the solutions provided.
 
-Make sure to highlight the unique benefits of {service}, and create a narrative that encourages engagement. Include a call-to-action encouraging businesses to seek real-time project help and provide our contact number +923105315892. Mention our website for more information www.AxthTech.com.
+Make sure to highlight the unique benefits of {service}, and create a narrative that encourages engagement. Include a call-to-action encouraging businesses to seek real-time project help and provide our contact number [Your contact]. Mention our website for more information www.yourwebsite.com.
 
 Do not use any special characters for formatting (like asterisks or quotes). Service: {service}
 Platform: {platform}
