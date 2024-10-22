@@ -1,6 +1,6 @@
-![image](https://github.com/user-attachments/assets/0e16cb83-12c0-4191-9d79-f54d75f06f59)
+![image](https://github.com/user-attachments/assets/fa5b1413-ac3c-45bc-9a8c-8d577c1f74f3)
 
-![image](https://github.com/user-attachments/assets/76668d3a-5ed7-4150-beea-b9cf69813cf3)
+![image](https://github.com/user-attachments/assets/bfda0e4e-fc5d-4ef4-84bb-71e0734fb321)
 
 
 Using llama opensource.
